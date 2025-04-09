@@ -1,1 +1,1 @@
-# MedHive-Docs
+# MedHive-Documentation

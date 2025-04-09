@@ -1,0 +1,59 @@
+ MedHive
+
+Problem Statement
+-> Create a Groq Powered AI companion that uses ML Models to deliver real-time health insights and recommendations, leveraging Groq's ultra fast inference for enhanced accessibility and user experience. 
+
+## About
+**MedHive** addresses a key gap in healthcare AI: the inability to access diverse patient data due to privacy concerns. As a result, traditional ML models are often biased because they’re trained on limited populations.
+
+### **Solution:** 
+A secure federated learning (FL) system where hospitals and research centers (data providers) train local models on sensitive patient data. The model weights are then encrypted and shared to build a robust, global model. 
+
+## User_Categories
+1. **Admin/Developers:** Full access to system controls, monitoring, and configuration.
+2. **Data Providers:** Hospitals and research centers that upload encrypted data and participate in training.
+3. **Contributors:** Participants in the federated chain that offer compute resources and local model updates.
+4. **Users:** End users who consume the AI-driven health insights and recommendations.
+
+
+## High - level Workflow
+1. User when visits MedHive for the first time the user will enter a role_registration system end of which it will be classified between the roles of Admin or Data Providers Contributors Users
+2. User then lands in the home page here among other visuals two main functions present will be the chat bot and Nav Bar 
+3. The chat bot will be build using groq API and langchain's FAISS to help users navigate the website and raise queries 
+4. the nav bar 
+    1. Admin Portal - Will give access to admin portal where the outputs of MLFlow model performace awill be showcased 
+    2. model hive - It is like central hive page for the models where the user will gain access to the different models. Each of which models will be hosted  on hugging face spaces ( Note. This section will be available to all users) 
+    3. Contribute - Here based on roles it will either be dataProvider or trainingResource (contributor) 
+        1. dataProviders: hospitals and research centers will be part of dataProviders; they will be able to contribute dataset to the system 
+        2. contributers : users who join the Federated learning system will be called contributors the dataset 
+5. The outcome of the federated learning will be send to the db and ML flow servers from which it will be analyzed and based on the admin decision the models may or may not be replaced 
+## GitHub Org and Project Structure Setup
+1. github/profile: to make documentation and cool readme for showcasing 
+2. MedHive: the one overall code repo for the entire project 
+3. MedHive-Frontend: this repo will contain ci/cd and codes for deploying in vercel as well as all next js codes
+4. MedHive-Supabase: create and deployment of the supabase db
+5. MedHive-AstraDB: all vector db related functions and code 
+6. MedHive-ModelHub: all the ml models for model hub 
+7. MedHive-FL: Federated Learning related functions, servers and codes
+8. MedHive-Backend: 
+9.
+
+## Tech Stack 
+1. _Frontend_ - HTML, Tailwind CSS, NEXT.js
+2. _Backend_ - Python and FastAPI 
+3. _Database_ 
+    1. Supabase
+    2. AstraDB
+4. Models - SK learn and Tensorflow 
+5. LLM Models - Groq API 
+6. Federated Learning - Flower 
+7. Frontend Hosting - vercel
+8. Model Hosting - Huggingface spaces for individual model hosting 
+9. Aggregated Learning Result and Performance  - MLFlow
+## Model Hive
+1. _LLM Symptom Analysis - Groq - and RAG Search _
+2. _ECG Curve Analysis_ - GraphRAG - Groq
+3. _Pneumonia Analysis from  XRay Images_ 
+4. Brest Cancer Detection - 
+5. Glaucoma Detection from FUNDUS Images
+
